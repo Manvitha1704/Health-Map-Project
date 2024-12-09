@@ -1,0 +1,65 @@
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://img.freepik.com/free-vector/abstract-medical-wallpaper-template-design_53876-61802.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1720828800&semt=ais_user'); 
+    background-size: cover; 
+    background-position: center; 
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+h1 {
+    text-align: center;
+    color: #333333; 
+}
+
+.service {
+    background-color: #16a060; 
+    color: #ffffff; 
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    position: relative; 
+    text-align: center; 
+    font-size: 24px; 
+    text-decoration: none; 
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease; 
+}
+
+.service:hover {
+    background-color: #16a085; 
+}
+
+.service::after {
+    content: '\2192'; 
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    font-size: 28px; 
+}
+
+.service a {
+    color: #ffffff; 
+    text-decoration: none;
+    display: block; 
+    position: relative;
+    z-index: 1; 
+}
+
+
+.service:last-child::after {
+    right: 15px; 
+}

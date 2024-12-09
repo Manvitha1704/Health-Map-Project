@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Registration</title>
+    <link rel="stylesheet" href="bloodb.css">
+</head>
+<body>
+    <header>
+        <h1>Donor Registration</h1>
+    </header>
+    <main>
+        <form id="donorForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="bloodType">Blood Type:</label>
+            <select id="bloodType" required>
+                <option value="" disabled selected>Select the blood type</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+            <label for="lastDonationDate">Last Donation Date:</label>
+            <input type="date" id="lastDonationDate">
+            <label for="firstTimeDonor">Are you a first-time donor?</label>
+            <input type="checkbox" id="firstTimeDonor" onchange="toggleLastDonationDate()">
+            <button type="submit">Register</button>
+        </form>
+
+        <div id="donorDetails"></div>
+        <div id="donorNotifications"></div>
+    </main>
+    <script src="donor.js"></script>
+</body>
+</html>

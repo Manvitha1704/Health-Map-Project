@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Map</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      background-image: url('https://t4.ftcdn.net/jpg/06/30/07/51/360_F_630075147_hFX9sPPOcr5OmRfSsrho5dwzYcUCnmyf.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    #results {
+      margin-top: 20px;
+      text-align: left;
+    }
+    .hospital {
+      background: white;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .hospital p {
+      margin: 5px 0;
+    }
+    .hospital strong {
+      font-size: 18px;
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Find Nearest Hospitals</h1>
+    <button onclick="findHospitals()">Find Hospitals</button>
+    <div id="results"></div>
+  </div>
+
+  <script>
+    function findHospitals() {
+      $('#results').html('<p>Loading...</p>');
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+
+          const overpassUrl = `https://overpass-api.de/api/interpreter?data=[out:json];node[amenity=hospital](around:5000,${lat},${lng});out;`;
+
+          $.get(overpassUrl, data => {
+            let html = '<h2>Nearest Hospitals:</h2>';
+            if (data.elements.length === 0) {
+              html += '<p>No hospitals found within 5 km radius.</p>';
+            } else {
+              data.elements.forEach(hospital => {
+                html += `<div class="hospital">
+                          <p><strong>${hospital.tags.name || 'Unnamed Hospital'}</strong></p>
+                          <p>Location: (${hospital.lat}, ${hospital.lon})</p>
+                          <p>${hospital.tags['addr:street'] || ''} ${hospital.tags['addr:housenumber'] || ''}</p>
+                          <p>${hospital.tags['addr:city'] || ''} ${hospital.tags['addr:postcode'] || ''}</p>
+                          <p>Phone: ${hospital.tags['contact:phone'] || 'N/A'}</p>
+                          <p>Website: ${hospital.tags['contact:website'] ? `<a href="${hospital.tags['contact:website']}" target="_blank">${hospital.tags['contact:website']}</a>` : 'N/A'}</p>
+                         </div>`;
+              });
+            }
+            $('#results').html(html);
+          }).fail(() => {
+            $('#results').html('<p>Error fetching data from Overpass API.</p>');
+          });
+        }, () => {
+          $('#results').html('<p>Error: Unable to retrieve your location.</p>');
+        });
+      } else {
+        alert('Geolocation is not supported by this browser.');
+      }
+    }
+  </script>
+</body>
+</html>

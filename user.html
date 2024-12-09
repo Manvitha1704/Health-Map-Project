@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <link rel="stylesheet" href="bloodb.css">
+</head>
+<body>
+    <header>
+        <h1>Check Donor Availability</h1>
+    </header>
+    <main>
+        <form id="availabilityForm">
+            <label for="bloodType">Select Blood Type:</label>
+            <select id="bloodType" required>
+                <option value="" disabled selected>Select the blood type</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+            <button type="submit">Check Availability</button>
+        </form>
+
+        <div id="availableDonors"></div>
+    </main>
+    <script src="user.js"></script>
+</body>
+</html>

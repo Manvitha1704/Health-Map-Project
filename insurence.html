@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Map</title>
+    <link rel="stylesheet" href="insurence.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Insurance Idea</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="hero">
+            <h2>Welcome to Insurance Idea</h2>
+            <p>Your one-stop solution for all insurance needs.</p>
+            <a href="#services" class="btn">Get a Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="container">
+        <h2>Our Services</h2>
+        <div class="service">
+            <h3>Health Insurance</h3>
+            <p>Comprehensive health insurance plans for individuals and families.</p>
+        </div>
+        <div class="service">
+            <h3>Auto Insurance</h3>
+            <p>Reliable auto insurance to keep you and your vehicle safe.</p>
+        </div>
+        <div class="service">
+            <h3>Life Insurance</h3>
+            <p>Life insurance plans to secure your loved ones' future.</p>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="container">
+        <h2>How It Works</h2>
+        <ol>
+            <li>Sign Up: Create an account with us.</li>
+            <li>Choose a Plan: Select the insurance plan that suits your needs.</li>
+            <li>Get Covered: Enjoy comprehensive coverage and peace of mind.</li>
+        </ol>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="container">
+        <h2>Our Blog</h2>
+        <article>
+            <h3>Insurance Tips</h3>
+            <p>Stay informed with our latest insurance tips and advice.</p>
+            <a href="#">Read More</a>
+        </article>
+        <article>
+            <h3>Industry News</h3>
+            <p>Catch up on the latest news in the insurance industry.</p>
+            <a href="#">Read More</a>
+        </article>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="container">
+        <h2>Contact Us</h2>
+        <form id="contact-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            
+            <label for="plan">Select Plan:</label>
+            <select id="plan" name="plan">
+                <option value="" disabled selected>Select an Insurance Plan</option>
+                <option value="health">Health Insurance Plan</option>
+                <option value="life">Life Insurance Plan</option>
+                <option value="auto">Auto Insurance Plan</option>
+            </select>
+            
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <div id="form-messages">
+            <!-- Message to be displayed after form submission -->
+        </div>
+    </section>
+    
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Insurance Idea. All rights reserved.</p>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="insurence.js"></script>
+</body>
+</html>
+

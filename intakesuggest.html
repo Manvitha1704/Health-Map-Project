@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Health Map</title>
+    <style>
+        /* Google Fonts Import */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #16a085, #f5f5f5);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 500;
+            font-size: 24px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 16px;
+        }
+
+        input::placeholder {
+            color: #ddd;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ff6a00;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff4500;
+        }
+
+        .recommendations {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <form id="healthForm">
+        <h1>Health Suggestion Tool</h1>
+        <label for="waterIntake">Water Intake (liters/day):</label>
+        <input type="number" id="waterIntake" name="waterIntake" required min="0" step="0.1" placeholder="Enter your water intake">
+
+        <label for="bloodSugar">Blood Sugar Level (mg/dL):</label>
+        <input type="number" id="bloodSugar" name="bloodSugar" required min="0" placeholder="Enter your blood sugar level">
+
+        <label for="exerciseDuration">Exercise Duration (minutes/day):</label>
+        <input type="number" id="exerciseDuration" name="exerciseDuration" required min="0" placeholder="Enter your exercise duration">
+
+        <button type="submit">Get Recommendations</button>
+    </form>
+
+    <div class="recommendations" id="recommendations"></div>
+
+    <script>
+        document.getElementById('healthForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission and page refresh
+
+            // Debugging: Log to console to confirm event listener is triggered
+            console.log('Form submitted');
+
+            // Retrieve input values
+            const waterIntake = parseFloat(document.getElementById('waterIntake').value);
+            const bloodSugar = parseFloat(document.getElementById('bloodSugar').value);
+            const exerciseDuration = parseFloat(document.getElementById('exerciseDuration').value);
+
+            // Debugging: Log input values to console to confirm retrieval
+            console.log('Water Intake:', waterIntake);
+            console.log('Blood Sugar:', bloodSugar);
+            console.log('Exercise Duration:', exerciseDuration);
+
+            // Initialize an array to hold the recommendations
+            let recommendations = [];
+
+            // Provide recommendations based on water intake
+            if (waterIntake < 4) {
+                recommendations.push("Increase your water intake to at least 4 liters per day.");
+            } else {
+                recommendations.push("Your water intake is adequate.");
+            }
+
+            // Provide recommendations based on blood sugar level
+            if (bloodSugar < 70) {
+                recommendations.push("Your blood sugar level is low. Consider eating a snack rich in carbohydrates.");
+            } else if (bloodSugar > 180) {
+                recommendations.push("Your blood sugar level is high. Monitor your intake of sugars and carbohydrates.");
+            } else {
+                recommendations.push("Your blood sugar level is within a normal range.");
+            }
+
+            // Provide recommendations based on exercise duration
+            if (exerciseDuration < 30) {
+                recommendations.push("Increase your exercise duration to at least 30 minutes per day.");
+            } else {
+                recommendations.push("Your exercise duration is sufficient.");
+            }
+
+            // Display the recommendations in the specified div
+            document.getElementById('recommendations').innerText = recommendations.join('\n');
+
+            // Debugging: Log recommendations to console to confirm display
+            console.log('Recommendations:', recommendations);
+        });
+    </script>
+</body>
+</html>

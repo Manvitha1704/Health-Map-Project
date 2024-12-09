@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan Details</title>
+    <link rel="stylesheet" href="insurence.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Insurance Idea</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="index.html#how-it-works">How It Works</a></li>
+                    <li><a href="index.html#blog">Blog</a></li>
+                    <li><a href="index.html#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="plan-details" class="container">
+        <h2 id="plan-name"></h2>
+        <p id="plan-description"></p>
+        <ul>
+            <li id="plan-premium"></li>
+            <li id="plan-deductible"></li>
+            <li id="plan-copayment"></li>
+        </ul>
+        <p>THANKYOU FOR CONTACTING US.WE WILL GET BACK TO YOU SOON.</p>
+
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Insurance Idea. All rights reserved.</p>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const planDetails = JSON.parse(localStorage.getItem('selectedPlan'));
+
+            if (planDetails) {
+                document.getElementById('plan-name').textContent = planDetails.name;
+                document.getElementById('plan-description').textContent = planDetails.details;
+                document.getElementById('plan-premium').textContent = `Annual Premium: ${planDetails.premium}`;
+                document.getElementById('plan-deductible').textContent = `Deductible: ${planDetails.deductible}`;
+                if (planDetails.copayment) {
+                    document.getElementById('plan-copayment').textContent = `Co-payment: ${planDetails.copayment}`;
+                } else if (planDetails.rentalCarCoverage) {
+                    document.getElementById('plan-copayment').textContent = `Rental Car Coverage: ${planDetails.rentalCarCoverage}`;
+                } else if (planDetails.deathBenefit) {
+                    document.getElementById('plan-copayment').textContent = `Death Benefit: ${planDetails.deathBenefit}`;
+                }
+            } else {
+                document.getElementById('plan-details').textContent = 'No plan details available.';
+            }
+        });
+    </script>
+</body>
+</html>

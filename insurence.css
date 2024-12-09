@@ -1,0 +1,300 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+    background-image: url('https://americanhumanist.org/wp-content/uploads/2020/09/AHA_ZoomBkgs1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h1, h2, h3 {
+    color: #0056b3;
+    text-align: center;
+}
+
+a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header Styles */
+header {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 0;
+    border-bottom: 3px solid #0056b3;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header nav {
+    text-align: center;
+    margin-top: 10px;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* Hero Section */
+.hero {
+    padding: 80px 0;
+    text-align: center;
+    color: #fff;
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+.hero .btn {
+    display: inline-block;
+    background: #0056b3;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.hero .btn:hover {
+    background: #003d80;
+}
+
+/* Services Section */
+#services {
+    padding: 50px 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.service {
+    margin-bottom: 40px;
+}
+
+.service h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* How It Works Section */
+#how-it-works {
+    padding: 50px 0;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#how-it-works h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#how-it-works ol {
+    padding-left: 0;
+    list-style: none;
+}
+
+#how-it-works li {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+/* Blog Section */
+#blog {
+    padding: 50px 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#blog h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#blog article {
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+#blog article h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+#blog article p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+#blog article a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+#blog article a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Us Section */
+/* Contact Us Section */
+#contact {
+    padding: 50px 0;
+    background: #f9f9f9;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#contact-form {
+    max-width: 600px;
+    margin: auto;
+}
+
+#contact-form label {
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+#contact-form select,
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#contact-form .btn {
+    display: inline-block;
+    background: #0056b3;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+#contact-form .btn:hover {
+    background: #003d80;
+}
+
+/* Form Messages */
+#form-messages {
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #0056b3;
+}
+
+
+/* Plan Details Section */
+#plan-details {
+    padding: 50px 0;
+    background: #fff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#plan-details h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+#plan-details p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    text-align: left;
+}
+
+#plan-details ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+#plan-details ul li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background: #0056b3;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

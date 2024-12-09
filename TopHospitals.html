@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Map</title>
+    <link rel="stylesheet" href="TopHospitals.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Hospital Search</h1>
+        <form id="searchForm" action="search-resullts.html" method="GET">
+            <div class="form-group">
+                <label for="city">Select City:</label>
+                <select id="city" name="city">
+                    <option value="" disabled selected>Select your city</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Pune">Pune</option>
+                    <option value="Benguluru">Benguluru</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="NewDelhi">NewDelhi</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="specialty">Select Specialty:</label>
+                <select id="specialty" name="specialty">
+                    <option value="" disabled selected>Select specialty</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                    <option value="Dental">Dental</option>
+                    <option value="Orthopedics">Orthopedics</option>
+                    <option value="Pulmonology">Pulmonology</option>
+                   
+                </select>
+            </div>
+            <button type="submit">Search Hospitals</button>
+        </form>
+    </div>
+
+    <script src="TopHospitalss.js"></script>
+</body>
+</html>

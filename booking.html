@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Appointment</title>
+    <link rel="stylesheet" href="bloodb.css">
+</head>
+<body>
+    <header>
+        <h1>Book Your Appointment</h1>
+    </header>
+    <main>
+        <form id="bookingForm">
+            <label for="appointmentDate">Appointment Date:</label>
+            <input type="date" id="appointmentDate" required>
+            <label for="appointmentTime">Appointment Time:</label>
+            <input type="time" id="appointmentTime" required>
+            <button type="submit">Book Slot</button>
+        </form>
+        <div id="bookingConfirmation"></div>
+    </main>
+    <script src="booking.js"></script>
+</body>
+</html>
